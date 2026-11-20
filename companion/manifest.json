@@ -1,0 +1,26 @@
+{
+  "$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
+  "id": "edyds-bintime",
+  "name": "edyds-bintime",
+  "shortname": "B_inTime",
+  "description": "Steuerung für den Bühnen-Timer B_inTime (edyds medienproduktion): Timer, Ablauf, Nachrichten, Blackout, Uhrzeit, NDI.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "git+https://github.com/edyds-medienproduktion/companion-module-edyds-bintime.git",
+  "bugs": "https://github.com/edyds-medienproduktion/companion-module-edyds-bintime/issues",
+  "maintainers": [
+    {
+      "name": "edyds medienproduktion"
+    }
+  ],
+  "legacyIds": [],
+  "runtime": {
+    "type": "node22",
+    "api": "nodejs-ipc",
+    "apiVersion": "0.0.0",
+    "entrypoint": "../main.js"
+  },
+  "manufacturer": "edyds",
+  "products": ["B_inTime"],
+  "keywords": ["timer", "countdown", "stage", "bühne", "clock"]
+}

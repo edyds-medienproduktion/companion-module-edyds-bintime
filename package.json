@@ -1,0 +1,24 @@
+{
+  "name": "edyds-bintime",
+  "version": "1.12.5",
+  "description": "Bitfocus Companion module for B_inTime stage timer (edyds medienproduktion)",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "package": "companion-module-build"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edyds-medienproduktion/companion-module-edyds-bintime.git"
+  },
+  "engines": {
+    "node": "^22.0.0"
+  },
+  "dependencies": {
+    "@companion-module/base": "~1.12.0"
+  },
+  "devDependencies": {
+    "@companion-module/tools": "^2.8.0"
+  }
+}
