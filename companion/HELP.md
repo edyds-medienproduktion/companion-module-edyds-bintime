@@ -1,34 +1,33 @@
 ## B_inTime (edyds medienproduktion)
 
-Steuert den Bühnen-Timer **B_inTime** auf dem Mac über das Netzwerk.
+Controls the stage and output timer **B_inTime** on a Mac over the network.
 
-### Einrichten
-1. B_inTime auf dem Mac starten.
-2. In Companion eine Verbindung „edyds B_inTime“ anlegen.
-3. **IP-Adresse des Macs** eintragen (steht in B_inTime oben unter „Links & Companion“). Läuft Companion auf demselben Mac: `127.0.0.1`.
-4. Port bleibt **8099**, außer er wurde in B_inTime geändert.
+> Note: the action, feedback and preset names inside Companion are currently shown in German. This page describes them in English.
 
-### Aktionen
-Start/Pause, Start, Pause, Reset, Nächster/Vorheriger Punkt, Zeit ± Sekunden, Schnell-Timer, Punkt aus dem Ablauf laden, gespeicherte Nachricht zeigen/ausblenden, eigene Nachricht senden (mit Variablen), Nachricht ausblenden, Blinken, Blackout, Uhrzeit statt Timer, NDI an/aus.
+### Setup
+1. Start B_inTime on the Mac.
+2. In Companion, add a connection "edyds B_inTime".
+3. Enter the **IP address of the Mac** (shown at the top of B_inTime under "Links & Companion"). If Companion runs on the same Mac, use `127.0.0.1`.
+4. Keep the port at **8099** unless you changed it in B_inTime.
 
-### Wie beim Irisdown-Countdown-Modul
-- **PLAY** (bei Irisdown „GO“), **PAUSE**, Pause umschalten, **RESET**
-- **RESET mit neuer Zeit**: `5` (Minuten), `05:00` oder `01:30:00`
-- **JOG**: Zeit um Minuten ändern (`1`, `-1`, `0.5`)
-- **Nachricht** senden / löschen
-- **Anzeige-Modus**: TIMER, CLOCK, BLACK, TEST
-- Feedbacks „Farbe nach Status“ (läuft/pausiert, Farben frei wählbar), „Anzeige-Modus“, „Nachricht aktiv“
-- Variablen `state`, `mode`, `time_hms`, `time_hm`, `time_h`, `time_m`, `time_s`
-- Presets „Mode“ und „Display time“ wie bei Irisdown; die Irisdown-Tasten aus „Timer control“ sind im Reiter „Timer“ enthalten
+### Actions
+- **Timer:** Play/Pause, Play, Pause, Reset, next/previous item, change time by ± seconds, quick timer, load an item from the run of show.
+- **RESET with a new time:** `5` (minutes), `05:00` or `01:30:00`.
+- **JOG:** change the time by minutes (`1`, `-1`, `0.5`).
+- **Messages:** show or hide a saved message, send your own message (variables allowed), hide the message, flash the output.
+- **Output:** Blackout, show the clock instead of the timer, NDI on/off.
+- **Display mode:** TIMER, CLOCK, BLACK, TEST.
+- **Test patterns for signal checks:** color bars, SMPTE, EBU, PLUGE, grayscale, ramp, multiburst, zone plate, grid, safe areas, ColorChecker.
+
+The control actions follow the layout of the Irisdown Countdown module: **PLAY** (Irisdown: "GO"), **PAUSE**, toggle pause, **RESET**.
 
 ### Feedbacks
-Timer läuft · Phase (gelb/orange/rot) · Farbe nach Phase · Blackout · Uhrzeit aktiv · NDI · Blinken · Nachricht sichtbar · Punkt geladen · Verbunden
+Timer running · Phase (yellow/orange/red) · Color by phase · Color by state (running/paused, colors freely selectable) · Display mode · Blackout · Clock active · NDI · Flashing · Message visible · Item loaded · Connected
 
-### Variablen
-`time`, `timer`, `remaining`, `remaining_seconds`, `elapsed`, `duration`, `progress`, `phase`, `running`, `title`, `speaker`, `next`, `index`, `cue_count`, `clock`, `planned_end`, `message`, `weather`, sowie `cue_N_title`, `cue_N_start`, `cue_N_duration` `cue_N_label` (Titel, sonst die Dauer) und `cue_N_short` bzw. `message_N_short` (gekürzt, für Tasten) und `message_N` für jeden Punkt bzw. jede Nachricht.
+### Variables
+`time`, `timer`, `remaining`, `remaining_seconds`, `elapsed`, `duration`, `progress`, `phase`, `running`, `title`, `speaker`, `next`, `index`, `cue_count`, `clock`, `planned_end`, `message`, `weather`, `state`, `mode`, `time_hms`, `time_hm`, `time_h`, `time_m`, `time_s`.
 
-### Aktionen im Überblick (neu: Testbild für die Signalkontrolle)
-Start/Pause/Reset, Vor/Zurück, Punkt laden, Schnell-Timer, Zeit setzen, ±Minuten, Nachrichten, Blinken, Blackout, Uhrzeit, Anzeige-Modus, Farbbalken-Testbild, **Testbild für die Signalkontrolle** (SMPTE, EBU, PLUGE, Graustufen, Rampe, Multiburst, Zonenplatte, Gitter, Sicherheitsbereiche, ColorChecker), NDI.
+For every item in the run of show: `cue_N_title`, `cue_N_start`, `cue_N_duration`, `cue_N_label` (title, otherwise the duration) and `cue_N_short` (shortened for buttons). For every message: `message_N` and `message_N_short`.
 
 ### Presets
-Fertige Tasten unter „Timer“, „Schnell-Timer“, „Ablauf“, „Nachrichten“, „Output“, „Mode“ und „Display time“. Die Tasten für Ablauf und Nachrichten erscheinen, sobald B_inTime verbunden ist.
+Ready-made buttons in the categories "Timer", "Schnell-Timer" (quick timers), "Ablauf" (run of show), "Nachrichten" (messages), "Output", "Mode" and "Display time". "Mode" and "Display time" work like the Irisdown presets, and the Irisdown buttons from "Timer control" are included in "Timer". The run-of-show and message buttons appear as soon as Companion is connected to B_inTime.
